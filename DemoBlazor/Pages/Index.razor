@@ -1,0 +1,11 @@
+﻿@page "/"
+@page "/{ReportName}"
+
+<WebReportContainer WebReport="@MyWebReport" />
+
+@code {
+    [Parameter]
+    public string ReportName { get; set; }
+
+    public WebReport MyWebReport { get; set; }
+}

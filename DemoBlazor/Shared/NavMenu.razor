@@ -1,0 +1,29 @@
+﻿@using System.IO
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">DemoBlazor</a>
+</div>
+
+<div>
+    <ul class="nav flex-column">
+        @foreach (string report in reports)
+        {
+            <li class="nav-item px-2">
+                <NavLink class="nav-link" href="@report">
+                    @Path.GetFileNameWithoutExtension(report)
+                </NavLink>
+            </li>
+        }
+    </ul>
+</div>
+
+@code {
+    // List of reports in folder
+    private string[] reports =
+        Directory.GetFiles(
+            Path.Combine(
+                Directory.GetCurrentDirectory(), "Reports"))
+        .Where((filename) => Path.GetExtension(filename) == ".frx")
+        .Select((filename) => Path.GetFileName(filename))
+        .ToArray();
+}
