@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Data;
 using FastReport;
-using FastReport.Web.Blazor;
+using FastReport.Web;
 
 namespace DemoBlazor.Pages
 {
