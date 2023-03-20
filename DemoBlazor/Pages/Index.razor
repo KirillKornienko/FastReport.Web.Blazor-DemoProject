@@ -5,7 +5,7 @@
 
 @code {
     [Parameter]
-    public string ReportName { get; set; }
+    public string ReportName { get; set; } = string.Empty;
 
-    public WebReport MyWebReport { get; set; }
+    public WebReport? MyWebReport { get; set; } = default(WebReport);
 }
